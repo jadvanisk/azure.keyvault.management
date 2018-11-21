@@ -12,5 +12,6 @@
 # Create Secret
 # Encrypt Secret
 # Decrypt Secret
+# Log entry
 
 #endregion
