@@ -1,11 +1,14 @@
 #region Main
-# Task list
+
+# ** Task list *** 
+
 # Create Azure AD normal test user accounts
 # Create Azure AD PAM test user accounts
 # Create security groups, one dynamic and one is assigned
 # Register Apps
 # 1. EUD
 # 2. PAM
+
 # Create Service Principal with a certificate from a Certificate Authority
 # https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-authenticate-service-principal-powershell
 
@@ -14,10 +17,12 @@
 
 # Create Key Vault
 # Create Key
+# Read public key
 # Create Secret
-# Encrypt Secret
+# Encrypt Secret, using Public Key
 # Decrypt Secret
+# Example var decryptedData = await keyClient.DecryptDataAsync(keyIdentifier, "RSA_OAEP", encryptedText);
 # Log entry
-# Log entry 2
+
 
 #endregion
