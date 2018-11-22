@@ -1,8 +1,11 @@
 #region Main
-# Create normal test user accounts
-# Create PAM test user accounts
+# Task list
+# Create Azure AD normal test user accounts
+# Create Azure AD PAM test user accounts
 # Create security groups, one dynamic and one is assigned
-# Register App
+# Register Apps
+# 1. EUD
+# 2. PAM
 # Create Service Principal with a certificate from a Certificate Authority
 # https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-authenticate-service-principal-powershell
 
