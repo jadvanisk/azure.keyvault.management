@@ -1,3 +1,33 @@
+<#
+.SYNOPSIS
+    Some text here
+    
+
+.OUTPUTS
+    Some text here
+
+.EXAMPLE
+    Some text here
+    Some text here
+
+Description
+-----------
+  Some text here
+
+.EXAMPLE
+    Some text here
+    Some text here
+
+Description
+-----------
+    Some text here
+
+
+.LINK
+    Some text here
+
+#>
+
 #region Main
 
 # ** Task list *** 
