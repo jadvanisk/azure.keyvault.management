@@ -43,6 +43,14 @@ Description
 # Create Azure AD normal test user accounts
 
 # New-AzureADUser 
+# https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureaduser?view=azureadps-2.0
+
+
+# $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
+# $PasswordProfile.Password = "<some randomly generated 16 character complex password string>"
+# $PasswordProfile.Password = New-Guid
+
+
 # Create Azure AD PAM test user accounts
 # Create security groups, one dynamic and one is assigned
 # Register Apps
