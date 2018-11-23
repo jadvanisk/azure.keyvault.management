@@ -65,6 +65,7 @@ New-AzureADGroup -Description "SYNERGIX Managed Azure AD Dynamic Users" -Display
 New-AzureADGroup -Description "SYNERGIX Managed Azure AD Assigned PAM Users" -DisplayName "SYNERGIX-ADCE-2018-R2-Rev-1-EUD-PAM" -SecurityEnabled $true -MailEnabled $false -MailNickName "<Not Set>"
 
 # Manage group membership, update member if needed
+# Note, we only need to manage the PAM group since it has assigned members
 # If count is 0, add members
 # If count is not zero, report current group members
 # If our users are not group members, add them
