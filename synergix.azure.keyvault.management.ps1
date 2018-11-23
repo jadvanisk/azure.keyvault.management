@@ -48,14 +48,24 @@ Description
 
 # $PasswordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
 # $PasswordProfile.Password = "<some randomly generated 16 character complex password string>"
-# $PasswordProfile.Password = New-Guid
 
+# $PasswordProfile.Password = New-Guid
 New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "US" -CreationType $null -Department "End User Computing" -DisplayName "John Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "john@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "US" -UserPrincipalName "john.smith@littleeinstein.me" -usertype "Member"
+
+# $PasswordProfile.Password = New-Guid
 New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "IN" -CreationType $null -Department "End User Computing" -DisplayName "Jane Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "jane@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "IN" -UserPrincipalName "jane.smith@littleeinstein.me" -usertype "Member"
 
 
 # Create Azure AD PAM test user accounts
+# New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "US" -CreationType $null -Department "End User Computing" -DisplayName "John Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "john@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "US" -UserPrincipalName "john.smith@littleeinstein.me" -usertype "Member"
+# New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "US" -CreationType $null -Department "End User Computing" -DisplayName "John Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "john@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "US" -UserPrincipalName "john.smith@littleeinstein.me" -usertype "Member"
+
 # Create security groups, one dynamic and one is assigned
+New-AzureADGroup -Description "SYNERGIX Managed Azure AD Dynamic Users" -DisplayName "SYNERGIX-ADCE-2018-R2-Rev-1-EUD-Users" -SecurityEnabled $true -MailEnabled $false -MailNickName "<Not Set>"
+New-AzureADGroup -Description "SYNERGIX Managed Azure AD Assigned PAM Users" -DisplayName "SYNERGIX-ADCE-2018-R2-Rev-1-EUD-PAM" -SecurityEnabled $true -MailEnabled $false -MailNickName "<Not Set>"
+
+
+
 # Register Apps
 # 1. EUD
 # 2. PAM
