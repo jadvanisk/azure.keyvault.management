@@ -32,9 +32,17 @@ Description
 
 # ** Task list *** 
 
+# Check if required modules are installed
+# https://www.powershellgallery.com/packages/AzureAD/2.0.2.4
+
+# Import required modules for Azure
+# Install-Module -Name AzureAD
+
 # Login to Azure Tenant account
 
 # Create Azure AD normal test user accounts
+
+# New-AzureADUser 
 # Create Azure AD PAM test user accounts
 # Create security groups, one dynamic and one is assigned
 # Register Apps
