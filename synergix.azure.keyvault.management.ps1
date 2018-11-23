@@ -60,10 +60,17 @@ New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "N
 # New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "US" -CreationType $null -Department "End User Computing" -DisplayName "John Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "john@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "US" -UserPrincipalName "john.smith@littleeinstein.me" -usertype "Member"
 # New-AzureADUser -PasswordProfile $PasswordProfile -AccountEnabled $True -City "New York City" -Country "US" -CreationType $null -Department "End User Computing" -DisplayName "John Smith" -GivenName "John" -surname "Smith" -JobTitle "L1 Admin - End User Computing" -MailNickName "john@littleeinstein.me" -Mobile "+1 201 202 2030" -PhysicalDeliveryOfficeName "1200 Route 22 East" -PostalCode "08807" -State "NJ" -StreetAddress "1200 Route 22 East" -TelephoneNumber "+1 201 202 2030" -UsageLocation "US" -UserPrincipalName "john.smith@littleeinstein.me" -usertype "Member"
 
-# Create security groups, one dynamic and one is assigned
+# Create security groups, one dynamic and one is assigned, if they don't exists
 New-AzureADGroup -Description "SYNERGIX Managed Azure AD Dynamic Users" -DisplayName "SYNERGIX-ADCE-2018-R2-Rev-1-EUD-Users" -SecurityEnabled $true -MailEnabled $false -MailNickName "<Not Set>"
 New-AzureADGroup -Description "SYNERGIX Managed Azure AD Assigned PAM Users" -DisplayName "SYNERGIX-ADCE-2018-R2-Rev-1-EUD-PAM" -SecurityEnabled $true -MailEnabled $false -MailNickName "<Not Set>"
 
+# Manage group membership, update member if needed
+# If count is 0, add members
+# If count is not zero, report current group members
+# If our users are not group members, add them
+# Do not remove our members
+# Get-AzureADGroupMember
+# Add-AzureADGroupMember
 
 
 # Register Apps
