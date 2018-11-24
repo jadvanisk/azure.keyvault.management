@@ -92,6 +92,9 @@ Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $res
   -PermissionsToKeys list,get `
   -PermissionsToSecrets list,get
 
+# Remove unwanted access policies
+Remove-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $resourceGroupName `
+  -UserPrincipalName 'Joe.Boggs@contoso.com'
 
 # New-AzureADUser 
 # https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureaduser?view=azureadps-2.0
