@@ -56,6 +56,10 @@ $location = 'southcentralus'
 # This should command from command line parameter
 $keyVaultAdminUsers = @('John Smith','Jane Smith')
 
+# Create a new secret, use new-guid to generate a name for the secret or use a simple name ex. mySecret007
+Set-AzureKeyVaultSecret -VaultName $keyVaultName -Name '6d860a24-ccfe-4a6d-a574-87efcad53183' `
+  -SecretValue (ConvertTo-SecureString -String 'DMzw#lrKcneU?~72F:fSvoZ8rr$\0&eO' -AsPlainText -Force)
+
 # Login to Azure Tenant account
 
 
