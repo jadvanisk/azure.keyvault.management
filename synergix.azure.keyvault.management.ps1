@@ -36,6 +36,26 @@ Description
 # Import required modules for Azure
 # Install-Module -Name AzureAD
 
+# The name of the Azure subscription to install the Key Vault into
+# This should command from command line parameter
+$subscriptionName = 'MySubscription'
+
+# The resource group that will contain the Key Vault to create to contain the Key Vault
+# This should command from command line parameter
+$resourceGroupName = 'MyKeyVaultRG'
+
+# The name of the Key Vault to install
+# This should command from command line parameter
+$keyVaultName = 'MyKeyVault'
+
+# The Azure data center to install the Key Vault to
+# This should command from command line parameter
+$location = 'southcentralus'
+
+# These are the Azure AD users that will have admin permissions to the Key Vault
+# This should command from command line parameter
+$keyVaultAdminUsers = @('John Smith','Jane Smith')
+
 # Login to Azure Tenant account
 
 # Create Azure AD normal test user accounts
