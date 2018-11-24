@@ -58,7 +58,32 @@ $keyVaultAdminUsers = @('John Smith','Jane Smith')
 
 # Login to Azure Tenant account
 
+
+# Select the appropriate subscription
+# Select-AzureRmSubscription -SubscriptionName $subscriptionName
+
+
 # Create Azure AD normal test user accounts
+# Login-AzureRMAccount
+
+# Make the Key Vault provider is available
+Register-AzureRmResourceProvider -ProviderNamespace Microsoft.KeyVault
+
+# Create the Resource Group
+New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+
+# Create the Key Vault (enabling it for Disk Encryption, Deployment and Template Deployment)
+New-AzureRmKeyVault -VaultName $keyVaultName -ResourceGroupName $resourceGroupName -Location $location `
+    -EnabledForDiskEncryption -EnabledForDeployment -EnabledForTemplateDeployment
+
+# Add the Administrator policies to the Key Vault
+# We must deploy only required permissions ; this is too wide open
+foreach ($keyVaultAdminUser in $keyVaultAdminUsers) {
+    $UserObjectId = (Get-AzureRmADUser -SearchString $keyVaultAdminUser).Id
+    Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $resourceGroupName -ObjectId $UserObjectId `
+        -PermissionsToKeys all -PermissionsToSecrets all -PermissionsToCertificates all
+}
+
 
 # New-AzureADUser 
 # https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureaduser?view=azureadps-2.0
