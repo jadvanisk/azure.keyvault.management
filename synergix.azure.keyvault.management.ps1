@@ -84,6 +84,14 @@ foreach ($keyVaultAdminUser in $keyVaultAdminUsers) {
         -PermissionsToKeys all -PermissionsToSecrets all -PermissionsToCertificates all
 }
 
+# Create an access policy to allow a service principal or application to get and list cryptographic keys if you know the 
+# Application Id (a GUID):
+Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVaultName -ResourceGroupName $resourceGroupName `
+  -ServicePrincipalName 'e9b1bc3c-4769-4a98-9014-b315fd2adf53' `
+  -PermissionsToCertificates list,get `
+  -PermissionsToKeys list,get `
+  -PermissionsToSecrets list,get
+
 
 # New-AzureADUser 
 # https://docs.microsoft.com/en-us/powershell/module/azuread/new-azureaduser?view=azureadps-2.0
