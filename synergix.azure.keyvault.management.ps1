@@ -22,7 +22,7 @@ Description
     Some text here
 
 .LINK
-    Some text here
+    https://dscottraynsford.wordpress.com/2017/04/17/using-azure-key-vault-with-powershell-part-1/
 
 #>
 
