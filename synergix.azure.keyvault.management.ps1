@@ -60,7 +60,7 @@ $keyVaultAdminUsers = @('John Smith','Jane Smith')
 # Assign additional parameters as approprite
   
   Set-AzureKeyVaultSecret -VaultName $keyVaultName -Name '6d860a24-ccfe-4a6d-a574-87efcad53183' `
-  -SecretValue (ConvertTo-SecureString -String 'DMzw#lrKcneU?~72F:fSvoZ8rr$\0&eO' -AsPlainText -Force) `
+  -SecretValue (ConvertTo-SecureString -String 'DMzw#JumbolrKcneUDumbo?~72F:fElephantSvoZ8rr$\0&eO' -AsPlainText -Force) `
   -ContentType 'txt' `
   -NotBefore ((Get-Date).ToUniversalTime()) `
   -Expires ((Get-Date).AddYears(2).ToUniversalTime()) `
