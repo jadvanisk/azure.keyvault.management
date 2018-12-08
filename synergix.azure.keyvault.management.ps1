@@ -36,6 +36,14 @@ Description
 # Import required modules for Azure
 # Install-Module -Name AzureAD
 
+
+# The name of the Azure subscription to install the Key Vault into
+# This should command from command line parameter
+$tenantID = 'ab968efd-ce09-4c23-b54e-1bf93f777bb7'
+
+Connect-AzureAD -TenantId $tenantID
+
+
 # The name of the Azure subscription to install the Key Vault into
 # This should command from command line parameter
 $subscriptionName = 'MySubscription'
