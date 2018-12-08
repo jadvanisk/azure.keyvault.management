@@ -36,6 +36,9 @@ Description
 # Import required modules for Azure
 # Install-Module -Name AzureAD
 
+# Import required modules for Azure Resource Manager
+# We should be using AzureRM and not Azure module mentioned above.
+# Install-Module -Name AzureRM
 
 # The name of the Azure subscription to install the Key Vault into
 # This should command from command line parameter
